@@ -1,0 +1,107 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+
+{% block section %}
+  <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+
+          <h2>당신의 기대로, 더 나은 스마트팜으로</h2>
+          <h1>제3대 대로 학생회</h1>
+
+        </div>
+      </div>
+
+      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <i class="ri-store-line"></i>
+            <h3><a href="https://docs.google.com/spreadsheets/d/1k8Dy801JWVhpib-MSz9-I7MgkXfu011k/edit#gid=960588850">회계보고서<br> 실시간 공개</a></h3>
+          </div>
+        </div>
+{#        <div class="col-xl-2 col-md-4">#}
+{#          <div class="icon-box">#}
+{#            <i class="ri-bar-chart-box-line"></i>#}
+{#            <h3><a href="https://we.snu.ac.kr/">공약이행률</a></h3>#}
+{#          </div>#}
+{#        </div>#}
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line"></i>
+            <h3><a href="/notice">회의록</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section><!-- End Hero -->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+
+    <link href="{% static 'home/calendar/main.css' %}" rel='stylesheet'/>
+    <script src="{% static 'home/calendar/main.js' %}"></script>
+    <script src="{% static 'home/calendar/moment.min.js' %}"></script>
+
+
+
+      <!-- ======= 메인홈에 구글캘린더나 주요학사일정 올릴거에용 ^___^ ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+{#              <h3>test</h3>#}
+{#              <h4>test</h4>#}
+{#              <h4>test</h4>#}
+
+            <img src={%  static 'home/img/freshman.png' %} class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3>학사일정</h3>
+
+                <script type='text/javascript'>
+                  document.addEventListener('DOMContentLoaded', function() {
+                      var calendarEl = document.getElementById('calendar');
+
+                      var calendar = new FullCalendar.Calendar(calendarEl, {
+                        googleCalendarApiKey: 'AIzaSyAYkws3tELd2_booe9bO0YmABLbF2DQLbc',
+                        eventSources: [
+                        {
+                              googleCalendarId: 'hekdms0429@gmail.com',
+                              className: 'smartfarm_council',
+                              color: (70, 130, 180),
+                              //textColor: 'black'
+                            },
+
+                        ]
+                      });
+                      calendar.render();
+                    });
+                    </script>
+                    <style>
+                    #calendar{
+                       width:100%;
+                       margin:20px auto;
+                    }
+                    </style>
+
+              <body>
+                <div id='calendar'></div>
+              </body>
+
+
+
+          </div>
+          </div>
+      </div>
+    </section><!-- End About Section -->
+
+
+{% endblock %}
+
+

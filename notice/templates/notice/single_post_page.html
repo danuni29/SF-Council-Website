@@ -1,0 +1,33 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block section %}
+
+
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+<div class="row">
+<div class="col-md-12" style="padding: 100px">
+        <div class="section-title">
+          <h2>NOTICE</h2>
+          <p>{{ post.title }} - 공지사항</p>
+
+            <h3>{{ post.title }}</h3>
+            <h4>{{ post.created_at }}</h4>
+            <h4>{{ post.content }}</h4>
+{#        <img src="{{post.head_image.url}}">#}
+        <button type="submit"></button>
+
+            {% if post.file_upload %}
+                <a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" role="button" download >Download: {{ post.get_file_name }}</a>
+            {% endif %}
+
+        </div>
+
+        </div>
+
+      </div>
+      </div>
+    </section><!-- End Team Section -->
+
+{% endblock %}

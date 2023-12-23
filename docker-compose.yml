@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: gunicorn council_website_prj.wsgi:application --bind 0.0.0.0:15010
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 15010:15010
